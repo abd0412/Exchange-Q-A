@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.User">
+    <!--@mbg.generated-->
+    <!--@Table `user`-->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="industry" jdbcType="VARCHAR" property="industry" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="authentication" jdbcType="VARCHAR" property="authentication" />
+    <result column="brief_introduction" jdbcType="VARCHAR" property="briefIntroduction" />
+    <result column="head_logo" jdbcType="VARCHAR" property="headLogo" />
+    <result column="follower_number" jdbcType="INTEGER" property="followerNumber" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_id, account, `password`, `name`, sex, introduce, address, industry, profession, 
+    education, authentication, brief_introduction, head_logo, follower_number, mark, 
+    create_time, update_time, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `user`
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from `user`
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="cn.edu.guet.exchange.entities.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `user` (account, `password`, `name`, 
+      sex, introduce, address, 
+      industry, profession, education, 
+      authentication, brief_introduction, head_logo, 
+      follower_number, mark, create_time, 
+      update_time, is_delete)
+    values (#{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{industry,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, 
+      #{authentication,jdbcType=VARCHAR}, #{briefIntroduction,jdbcType=VARCHAR}, #{headLogo,jdbcType=VARCHAR}, 
+      #{followerNumber,jdbcType=INTEGER}, #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="cn.edu.guet.exchange.entities.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `user`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="account != null">
+        account,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="industry != null">
+        industry,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="education != null">
+        education,
+      </if>
+      <if test="authentication != null">
+        authentication,
+      </if>
+      <if test="briefIntroduction != null">
+        brief_introduction,
+      </if>
+      <if test="headLogo != null">
+        head_logo,
+      </if>
+      <if test="followerNumber != null">
+        follower_number,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="authentication != null">
+        #{authentication,jdbcType=VARCHAR},
+      </if>
+      <if test="briefIntroduction != null">
+        #{briefIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="headLogo != null">
+        #{headLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="followerNumber != null">
+        #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.User">
+    <!--@mbg.generated-->
+    update `user`
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        industry = #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="authentication != null">
+        authentication = #{authentication,jdbcType=VARCHAR},
+      </if>
+      <if test="briefIntroduction != null">
+        brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="headLogo != null">
+        head_logo = #{headLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="followerNumber != null">
+        follower_number = #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.User">
+    <!--@mbg.generated-->
+    update `user`
+    set account = #{account,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      industry = #{industry,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      authentication = #{authentication,jdbcType=VARCHAR},
+      brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
+      head_logo = #{headLogo,jdbcType=VARCHAR},
+      follower_number = #{followerNumber,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

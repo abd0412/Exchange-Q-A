@@ -1,0 +1,22 @@
+server:
+  port: 8246
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver                # mysql驱动包
+    name: exchange_q_a
+    url: jdbc:mysql://10.12.0.158:3306/exchange_q_a?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    #10.12.0.158    127.0.0.1
+    username: root
+    password: 123456
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: cn.edu.guet.exchange.entities   # 所有Entity别名类所在包
+
+file:
+  uploadFolder: C:\Users\zhanghb\Desktop\nginx-tourism_guilin\nginx-1.18.0\html\imagesUpload
+  #C:\Users\zhanghb\Desktop\nginx-tourism_guilin\nginx-1.18.0\html\imagesUpload #F:/images #/var/www/html/acc-image

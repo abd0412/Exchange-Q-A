@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.CollectMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Collect">
+    <!--@mbg.generated-->
+    <!--@Table `collect`-->
+    <id column="collect_id" jdbcType="INTEGER" property="collectId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="module_code" jdbcType="INTEGER" property="moduleCode" />
+    <result column="module_id" jdbcType="INTEGER" property="moduleId" />
+    <result column="favorites_id" jdbcType="INTEGER" property="favoritesId" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    collect_id, user_id, module_code, module_id, favorites_id, mark, create_time, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `collect`
+    where collect_id = #{collectId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from `collect`
+    where collect_id = #{collectId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="collect_id" keyProperty="collectId" parameterType="cn.edu.guet.exchange.entities.Collect" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `collect` (user_id, module_code, module_id, 
+      favorites_id, mark, create_time, 
+      is_delete)
+    values (#{userId,jdbcType=INTEGER}, #{moduleCode,jdbcType=INTEGER}, #{moduleId,jdbcType=INTEGER}, 
+      #{favoritesId,jdbcType=INTEGER}, #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="collect_id" keyProperty="collectId" parameterType="cn.edu.guet.exchange.entities.Collect" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `collect`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="moduleCode != null">
+        module_code,
+      </if>
+      <if test="moduleId != null">
+        module_id,
+      </if>
+      <if test="favoritesId != null">
+        favorites_id,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="moduleCode != null">
+        #{moduleCode,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        #{moduleId,jdbcType=INTEGER},
+      </if>
+      <if test="favoritesId != null">
+        #{favoritesId,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Collect">
+    <!--@mbg.generated-->
+    update `collect`
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="moduleCode != null">
+        module_code = #{moduleCode,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        module_id = #{moduleId,jdbcType=INTEGER},
+      </if>
+      <if test="favoritesId != null">
+        favorites_id = #{favoritesId,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+    </set>
+    where collect_id = #{collectId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Collect">
+    <!--@mbg.generated-->
+    update `collect`
+    set user_id = #{userId,jdbcType=INTEGER},
+      module_code = #{moduleCode,jdbcType=INTEGER},
+      module_id = #{moduleId,jdbcType=INTEGER},
+      favorites_id = #{favoritesId,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where collect_id = #{collectId,jdbcType=INTEGER}
+  </update>
+    <select id="selectCollectListByParam" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from `collect`
+      where user_id = #{userId,jdbcType=INTEGER}
+      and module_code = #{moduleCode,jdbcType=INTEGER}
+      and module_id = #{moduleId,jdbcType=INTEGER}
+      and is_delete = false
+    </select>
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.LoginMapper">
+    <select id="selectUserId" parameterType="java.lang.String" resultType="java.lang.Integer">
+        <!--@mbg.generated-->
+        select
+        user_id
+        from `user`
+        where account = #{account,jdbcType=VARCHAR}
+    </select>
+</mapper>

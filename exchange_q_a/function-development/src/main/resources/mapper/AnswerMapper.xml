@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.AnswerMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Answer">
+    <!--@mbg.generated-->
+    <!--@Table answer-->
+    <id column="answer_id" jdbcType="INTEGER" property="answerId" />
+    <result column="problem_id" jdbcType="INTEGER" property="problemId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="answer_content" jdbcType="LONGVARCHAR" property="answerContent" />
+    <result column="declare" jdbcType="INTEGER" property="declare" />
+    <result column="is_anonymity" jdbcType="BIT" property="isAnonymity" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="is_push" jdbcType="BIT" property="isPush" />
+    <result column="is_allowed" jdbcType="BIT" property="isAllowed" />
+    <result column="is_restriction" jdbcType="BIT" property="isRestriction" />
+    <result column="restriction_type" jdbcType="INTEGER" property="restrictionType" />
+    <result column="agree_number" jdbcType="INTEGER" property="agreeNumber" />
+    <result column="disagree_number" jdbcType="INTEGER" property="disagreeNumber" />
+    <result column="comment_number" jdbcType="INTEGER" property="commentNumber" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="answer_abbreviated_content" jdbcType="LONGVARCHAR" property="answerAbbreviatedContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    answer_id, problem_id, user_id, answer_content, `declare`, is_anonymity, introduce, 
+    is_push, is_allowed, is_restriction, restriction_type, agree_number, disagree_number, 
+    comment_number, mark, create_time, update_time, is_delete, answer_abbreviated_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from answer
+    where answer_id = #{answerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from answer
+    where answer_id = #{answerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="answer_id" keyProperty="answerId" parameterType="cn.edu.guet.exchange.entities.Answer" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into answer (problem_id, user_id, answer_content, 
+      `declare`, is_anonymity, introduce, 
+      is_push, is_allowed, is_restriction, 
+      restriction_type, agree_number, disagree_number, 
+      comment_number, mark, create_time, 
+      update_time, is_delete, answer_abbreviated_content
+      )
+    values (#{problemId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{answerContent,jdbcType=LONGVARCHAR}, 
+      #{declare,jdbcType=INTEGER}, #{isAnonymity,jdbcType=BIT}, #{introduce,jdbcType=VARCHAR}, 
+      #{isPush,jdbcType=BIT}, #{isAllowed,jdbcType=BIT}, #{isRestriction,jdbcType=BIT}, 
+      #{restrictionType,jdbcType=INTEGER}, #{agreeNumber,jdbcType=INTEGER}, #{disagreeNumber,jdbcType=INTEGER}, 
+      #{commentNumber,jdbcType=INTEGER}, #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT}, #{answerAbbreviatedContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="answer_id" keyProperty="answerId" parameterType="cn.edu.guet.exchange.entities.Answer" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into answer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="problemId != null">
+        problem_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+      <if test="declare != null">
+        `declare`,
+      </if>
+      <if test="isAnonymity != null">
+        is_anonymity,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="isPush != null">
+        is_push,
+      </if>
+      <if test="isAllowed != null">
+        is_allowed,
+      </if>
+      <if test="isRestriction != null">
+        is_restriction,
+      </if>
+      <if test="restrictionType != null">
+        restriction_type,
+      </if>
+      <if test="agreeNumber != null">
+        agree_number,
+      </if>
+      <if test="disagreeNumber != null">
+        disagree_number,
+      </if>
+      <if test="commentNumber != null">
+        comment_number,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="answerAbbreviatedContent != null">
+        answer_abbreviated_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="problemId != null">
+        #{problemId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="declare != null">
+        #{declare,jdbcType=INTEGER},
+      </if>
+      <if test="isAnonymity != null">
+        #{isAnonymity,jdbcType=BIT},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="isPush != null">
+        #{isPush,jdbcType=BIT},
+      </if>
+      <if test="isAllowed != null">
+        #{isAllowed,jdbcType=BIT},
+      </if>
+      <if test="isRestriction != null">
+        #{isRestriction,jdbcType=BIT},
+      </if>
+      <if test="restrictionType != null">
+        #{restrictionType,jdbcType=INTEGER},
+      </if>
+      <if test="agreeNumber != null">
+        #{agreeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="disagreeNumber != null">
+        #{disagreeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="answerAbbreviatedContent != null">
+        #{answerAbbreviatedContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Answer">
+    <!--@mbg.generated-->
+    update answer
+    <set>
+      <if test="problemId != null">
+        problem_id = #{problemId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="answerContent != null">
+        answer_content = #{answerContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="declare != null">
+        `declare` = #{declare,jdbcType=INTEGER},
+      </if>
+      <if test="isAnonymity != null">
+        is_anonymity = #{isAnonymity,jdbcType=BIT},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="isPush != null">
+        is_push = #{isPush,jdbcType=BIT},
+      </if>
+      <if test="isAllowed != null">
+        is_allowed = #{isAllowed,jdbcType=BIT},
+      </if>
+      <if test="isRestriction != null">
+        is_restriction = #{isRestriction,jdbcType=BIT},
+      </if>
+      <if test="restrictionType != null">
+        restriction_type = #{restrictionType,jdbcType=INTEGER},
+      </if>
+      <if test="agreeNumber != null">
+        agree_number = #{agreeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="disagreeNumber != null">
+        disagree_number = #{disagreeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        comment_number = #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="answerAbbreviatedContent != null">
+        answer_abbreviated_content = #{answerAbbreviatedContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where answer_id = #{answerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Answer">
+    <!--@mbg.generated-->
+    update answer
+    set problem_id = #{problemId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      answer_content = #{answerContent,jdbcType=LONGVARCHAR},
+      `declare` = #{declare,jdbcType=INTEGER},
+      is_anonymity = #{isAnonymity,jdbcType=BIT},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      is_push = #{isPush,jdbcType=BIT},
+      is_allowed = #{isAllowed,jdbcType=BIT},
+      is_restriction = #{isRestriction,jdbcType=BIT},
+      restriction_type = #{restrictionType,jdbcType=INTEGER},
+      agree_number = #{agreeNumber,jdbcType=INTEGER},
+      disagree_number = #{disagreeNumber,jdbcType=INTEGER},
+      comment_number = #{commentNumber,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT},
+      answer_abbreviated_content = #{answerAbbreviatedContent,jdbcType=LONGVARCHAR}
+    where answer_id = #{answerId,jdbcType=INTEGER}
+  </update>
+  <select id="selectAnswerByProblemId" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from answer
+    where problem_id = #{problemId,jdbcType=INTEGER}
+    and is_delete = false
+    limit #{lineNumber}, #{pageLength}
+  </select>
+</mapper>

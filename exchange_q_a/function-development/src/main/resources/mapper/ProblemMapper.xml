@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.ProblemMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Problem">
+    <!--@mbg.generated-->
+    <!--@Table problem-->
+    <id column="problem_id" jdbcType="INTEGER" property="problemId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="problem_describe" jdbcType="VARCHAR" property="problemDescribe" />
+    <result column="problem_details" jdbcType="LONGVARCHAR" property="problemDetails" />
+    <result column="browse_number" jdbcType="INTEGER" property="browseNumber" />
+    <result column="follower_number" jdbcType="INTEGER" property="followerNumber" />
+    <result column="good_question_number" jdbcType="INTEGER" property="goodQuestionNumber" />
+    <result column="comment_number" jdbcType="INTEGER" property="commentNumber" />
+    <result column="answer_number" jdbcType="INTEGER" property="answerNumber" />
+    <result column="is_anonymity" jdbcType="BIT" property="isAnonymity" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="abbreviated_content" jdbcType="LONGVARCHAR" property="abbreviatedContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    problem_id, user_id, problem_describe, problem_details, browse_number, follower_number, 
+    good_question_number, comment_number, answer_number, is_anonymity, mark, create_time, 
+    update_time, is_delete, abbreviated_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from problem
+    where problem_id = #{problemId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from problem
+    where problem_id = #{problemId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="problem_id" keyProperty="problemId" parameterType="cn.edu.guet.exchange.entities.Problem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into problem (user_id, problem_describe, problem_details, 
+      browse_number, follower_number, good_question_number, 
+      comment_number, answer_number, is_anonymity, 
+      mark, create_time, update_time, 
+      is_delete, abbreviated_content)
+    values (#{userId,jdbcType=INTEGER}, #{problemDescribe,jdbcType=VARCHAR}, #{problemDetails,jdbcType=LONGVARCHAR}, 
+      #{browseNumber,jdbcType=INTEGER}, #{followerNumber,jdbcType=INTEGER}, #{goodQuestionNumber,jdbcType=INTEGER}, 
+      #{commentNumber,jdbcType=INTEGER}, #{answerNumber,jdbcType=INTEGER}, #{isAnonymity,jdbcType=BIT}, 
+      #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=BIT}, #{abbreviatedContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="problem_id" keyProperty="problemId" parameterType="cn.edu.guet.exchange.entities.Problem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into problem
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="problemDescribe != null">
+        problem_describe,
+      </if>
+      <if test="problemDetails != null">
+        problem_details,
+      </if>
+      <if test="browseNumber != null">
+        browse_number,
+      </if>
+      <if test="followerNumber != null">
+        follower_number,
+      </if>
+      <if test="goodQuestionNumber != null">
+        good_question_number,
+      </if>
+      <if test="commentNumber != null">
+        comment_number,
+      </if>
+      <if test="answerNumber != null">
+        answer_number,
+      </if>
+      <if test="isAnonymity != null">
+        is_anonymity,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="abbreviatedContent != null">
+        abbreviated_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="problemDescribe != null">
+        #{problemDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="problemDetails != null">
+        #{problemDetails,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="browseNumber != null">
+        #{browseNumber,jdbcType=INTEGER},
+      </if>
+      <if test="followerNumber != null">
+        #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="goodQuestionNumber != null">
+        #{goodQuestionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="answerNumber != null">
+        #{answerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="isAnonymity != null">
+        #{isAnonymity,jdbcType=BIT},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="abbreviatedContent != null">
+        #{abbreviatedContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Problem">
+    <!--@mbg.generated-->
+    update problem
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="problemDescribe != null">
+        problem_describe = #{problemDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="problemDetails != null">
+        problem_details = #{problemDetails,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="browseNumber != null">
+        browse_number = #{browseNumber,jdbcType=INTEGER},
+      </if>
+      <if test="followerNumber != null">
+        follower_number = #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="goodQuestionNumber != null">
+        good_question_number = #{goodQuestionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        comment_number = #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="answerNumber != null">
+        answer_number = #{answerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="isAnonymity != null">
+        is_anonymity = #{isAnonymity,jdbcType=BIT},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="abbreviatedContent != null">
+        abbreviated_content = #{abbreviatedContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where problem_id = #{problemId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Problem">
+    <!--@mbg.generated-->
+    update problem
+    set user_id = #{userId,jdbcType=INTEGER},
+      problem_describe = #{problemDescribe,jdbcType=VARCHAR},
+      problem_details = #{problemDetails,jdbcType=LONGVARCHAR},
+      browse_number = #{browseNumber,jdbcType=INTEGER},
+      follower_number = #{followerNumber,jdbcType=INTEGER},
+      good_question_number = #{goodQuestionNumber,jdbcType=INTEGER},
+      comment_number = #{commentNumber,jdbcType=INTEGER},
+      answer_number = #{answerNumber,jdbcType=INTEGER},
+      is_anonymity = #{isAnonymity,jdbcType=BIT},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT},
+      abbreviated_content = #{abbreviatedContent,jdbcType=LONGVARCHAR}
+    where problem_id = #{problemId,jdbcType=INTEGER}
+  </update>
+  <select id="selectPopularProblem" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    problem_id, user_id, problem_describe, problem_details, browse_number, follower_number,
+    good_question_number, comment_number, answer_number, is_anonymity, mark, create_time,
+    update_time, is_delete, abbreviated_content, follower_number+good_question_number+comment_number+answer_number num
+    from problem
+    where is_delete = false
+    order by num desc
+    limit #{lineNumber}, #{pageLength}
+  </select>
+  <select id="selectLatestProblem" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from problem
+    where is_delete = false
+    order by create_time desc
+    limit #{lineNumber}, #{pageLength}
+  </select>
+</mapper>

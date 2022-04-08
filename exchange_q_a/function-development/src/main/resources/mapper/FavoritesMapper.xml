@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.FavoritesMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Favorites">
+    <!--@mbg.generated-->
+    <!--@Table favorites-->
+    <id column="favorites_id" jdbcType="INTEGER" property="favoritesId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="favorites_title" jdbcType="VARCHAR" property="favoritesTitle" />
+    <result column="favorites_describe" jdbcType="VARCHAR" property="favoritesDescribe" />
+    <result column="is_limit" jdbcType="BIT" property="isLimit" />
+    <result column="content_number" jdbcType="INTEGER" property="contentNumber" />
+    <result column="follower_number" jdbcType="INTEGER" property="followerNumber" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    favorites_id, user_id, favorites_title, favorites_describe, is_limit, content_number, 
+    follower_number, mark, create_time, update_time, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from favorites
+    where favorites_id = #{favoritesId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from favorites
+    where favorites_id = #{favoritesId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="favorites_id" keyProperty="favoritesId" parameterType="cn.edu.guet.exchange.entities.Favorites" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into favorites (user_id, favorites_title, favorites_describe, 
+      is_limit, content_number, follower_number, 
+      mark, create_time, update_time, 
+      is_delete)
+    values (#{userId,jdbcType=INTEGER}, #{favoritesTitle,jdbcType=VARCHAR}, #{favoritesDescribe,jdbcType=VARCHAR}, 
+      #{isLimit,jdbcType=BIT}, #{contentNumber,jdbcType=INTEGER}, #{followerNumber,jdbcType=INTEGER}, 
+      #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="favorites_id" keyProperty="favoritesId" parameterType="cn.edu.guet.exchange.entities.Favorites" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into favorites
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="favoritesTitle != null">
+        favorites_title,
+      </if>
+      <if test="favoritesDescribe != null">
+        favorites_describe,
+      </if>
+      <if test="isLimit != null">
+        is_limit,
+      </if>
+      <if test="contentNumber != null">
+        content_number,
+      </if>
+      <if test="followerNumber != null">
+        follower_number,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="favoritesTitle != null">
+        #{favoritesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="favoritesDescribe != null">
+        #{favoritesDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="isLimit != null">
+        #{isLimit,jdbcType=BIT},
+      </if>
+      <if test="contentNumber != null">
+        #{contentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="followerNumber != null">
+        #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Favorites">
+    <!--@mbg.generated-->
+    update favorites
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="favoritesTitle != null">
+        favorites_title = #{favoritesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="favoritesDescribe != null">
+        favorites_describe = #{favoritesDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="isLimit != null">
+        is_limit = #{isLimit,jdbcType=BIT},
+      </if>
+      <if test="contentNumber != null">
+        content_number = #{contentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="followerNumber != null">
+        follower_number = #{followerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+    </set>
+    where favorites_id = #{favoritesId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Favorites">
+    <!--@mbg.generated-->
+    update favorites
+    set user_id = #{userId,jdbcType=INTEGER},
+      favorites_title = #{favoritesTitle,jdbcType=VARCHAR},
+      favorites_describe = #{favoritesDescribe,jdbcType=VARCHAR},
+      is_limit = #{isLimit,jdbcType=BIT},
+      content_number = #{contentNumber,jdbcType=INTEGER},
+      follower_number = #{followerNumber,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where favorites_id = #{favoritesId,jdbcType=INTEGER}
+  </update>
+    <select id="selectFavoritesByUserId" parameterType="integer" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from favorites
+      where user_id = #{userId,jdbcType=INTEGER}
+      and is_delete = false
+    </select>
+</mapper>

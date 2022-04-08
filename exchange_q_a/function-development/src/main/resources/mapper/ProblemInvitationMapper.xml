@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.ProblemInvitationMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.ProblemInvitation">
+    <!--@mbg.generated-->
+    <!--@Table problem_invitation-->
+    <id column="questions_invitees_id" jdbcType="INTEGER" property="questionsInviteesId" />
+    <result column="problem_id" jdbcType="INTEGER" property="problemId" />
+    <result column="inviter_id" jdbcType="INTEGER" property="inviterId" />
+    <result column="invitee_id" jdbcType="INTEGER" property="inviteeId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    questions_invitees_id, problem_id, inviter_id, invitee_id, update_time, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from problem_invitation
+    where questions_invitees_id = #{questionsInviteesId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from problem_invitation
+    where questions_invitees_id = #{questionsInviteesId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="questions_invitees_id" keyProperty="questionsInviteesId" parameterType="cn.edu.guet.exchange.entities.ProblemInvitation" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into problem_invitation (problem_id, inviter_id, invitee_id, 
+      update_time, is_delete)
+    values (#{problemId,jdbcType=INTEGER}, #{inviterId,jdbcType=INTEGER}, #{inviteeId,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="questions_invitees_id" keyProperty="questionsInviteesId" parameterType="cn.edu.guet.exchange.entities.ProblemInvitation" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into problem_invitation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="problemId != null">
+        problem_id,
+      </if>
+      <if test="inviterId != null">
+        inviter_id,
+      </if>
+      <if test="inviteeId != null">
+        invitee_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="problemId != null">
+        #{problemId,jdbcType=INTEGER},
+      </if>
+      <if test="inviterId != null">
+        #{inviterId,jdbcType=INTEGER},
+      </if>
+      <if test="inviteeId != null">
+        #{inviteeId,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.ProblemInvitation">
+    <!--@mbg.generated-->
+    update problem_invitation
+    <set>
+      <if test="problemId != null">
+        problem_id = #{problemId,jdbcType=INTEGER},
+      </if>
+      <if test="inviterId != null">
+        inviter_id = #{inviterId,jdbcType=INTEGER},
+      </if>
+      <if test="inviteeId != null">
+        invitee_id = #{inviteeId,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+    </set>
+    where questions_invitees_id = #{questionsInviteesId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.ProblemInvitation">
+    <!--@mbg.generated-->
+    update problem_invitation
+    set problem_id = #{problemId,jdbcType=INTEGER},
+      inviter_id = #{inviterId,jdbcType=INTEGER},
+      invitee_id = #{inviteeId,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where questions_invitees_id = #{questionsInviteesId,jdbcType=INTEGER}
+  </update>
+  <select id="selectInviteByInviterId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from problem_invitation
+    where inviter_id = #{inviterId,jdbcType=INTEGER}
+    and problem_id = #{problemId,jdbcType=INTEGER}
+    and is_delete = false
+  </select>
+  <select id="selectInviteProblem" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from problem_invitation
+    where invitee_id = #{userId}
+    and is_delete = false
+    limit #{lineNumber}, #{pageLength}
+  </select>
+
+</mapper>

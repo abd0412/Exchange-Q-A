@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="cn.edu.guet.exchange.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/function-development/src/main/java" />
+        <option name="javaModelPackage" value="cn.edu.guet.exchange.entities" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/function-development/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="function-development" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="function-development">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="cn.edu.guet.exchange.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/function-development/src/main/java" />
+                  <option name="javaModelPacakge" value="cn.edu.guet.exchange.entities" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/function-development/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/function-development/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="exchange_q_a:answer">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="answer_id" />
+                  <option name="javaModelName" value="Answer" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:article">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="article_id" />
+                  <option name="javaModelName" value="Article" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:collect">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="collect_id" />
+                  <option name="javaModelName" value="Collect" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:collection">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="collection_id" />
+                  <option name="javaModelName" value="Collection" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:comment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="comment_id" />
+                  <option name="javaModelName" value="Comment" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:favorites">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="favorites_id" />
+                  <option name="javaModelName" value="Favorites" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:idea">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="idea_id" />
+                  <option name="javaModelName" value="Idea" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:problem">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="problem_id" />
+                  <option name="javaModelName" value="Problem" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:problem_invitation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="questions_invitees_id" />
+                  <option name="javaModelName" value="ProblemInvitation" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:questions_invitees">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="questions_invitees_id" />
+                  <option name="javaModelName" value="QuestionsInvitees" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="relation_id" />
+                  <option name="javaModelName" value="Relation" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:tag">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="tag_id" />
+                  <option name="javaModelName" value="Tag" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:tag_owner">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="tag_owner_id" />
+                  <option name="javaModelName" value="TagOwner" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="exchange_q_a:user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="user_id" />
+                  <option name="javaModelName" value="User" />
+                  <option name="moduleName" value="function-development" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mapper" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/function-development/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

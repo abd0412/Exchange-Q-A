@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.IdeaMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Idea">
+    <!--@mbg.generated-->
+    <!--@Table idea-->
+    <id column="idea_id" jdbcType="INTEGER" property="ideaId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="idea_content" jdbcType="VARCHAR" property="ideaContent" />
+    <result column="is_restriction" jdbcType="BIT" property="isRestriction" />
+    <result column="restriction_type" jdbcType="VARCHAR" property="restrictionType" />
+    <result column="applause_number" jdbcType="INTEGER" property="applauseNumber" />
+    <result column="comment_number" jdbcType="INTEGER" property="commentNumber" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    idea_id, user_id, idea_content, is_restriction, restriction_type, applause_number, 
+    comment_number, mark, create_time, update_time, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from idea
+    where idea_id = #{ideaId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from idea
+    where idea_id = #{ideaId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="idea_id" keyProperty="ideaId" parameterType="cn.edu.guet.exchange.entities.Idea" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into idea (user_id, idea_content, is_restriction, 
+      restriction_type, applause_number, comment_number, 
+      mark, create_time, update_time, 
+      is_delete)
+    values (#{userId,jdbcType=INTEGER}, #{ideaContent,jdbcType=VARCHAR}, #{isRestriction,jdbcType=BIT}, 
+      #{restrictionType,jdbcType=VARCHAR}, #{applauseNumber,jdbcType=INTEGER}, #{commentNumber,jdbcType=INTEGER}, 
+      #{mark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="idea_id" keyProperty="ideaId" parameterType="cn.edu.guet.exchange.entities.Idea" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into idea
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="ideaContent != null">
+        idea_content,
+      </if>
+      <if test="isRestriction != null">
+        is_restriction,
+      </if>
+      <if test="restrictionType != null">
+        restriction_type,
+      </if>
+      <if test="applauseNumber != null">
+        applause_number,
+      </if>
+      <if test="commentNumber != null">
+        comment_number,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="ideaContent != null">
+        #{ideaContent,jdbcType=VARCHAR},
+      </if>
+      <if test="isRestriction != null">
+        #{isRestriction,jdbcType=BIT},
+      </if>
+      <if test="restrictionType != null">
+        #{restrictionType,jdbcType=VARCHAR},
+      </if>
+      <if test="applauseNumber != null">
+        #{applauseNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Idea">
+    <!--@mbg.generated-->
+    update idea
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="ideaContent != null">
+        idea_content = #{ideaContent,jdbcType=VARCHAR},
+      </if>
+      <if test="isRestriction != null">
+        is_restriction = #{isRestriction,jdbcType=BIT},
+      </if>
+      <if test="restrictionType != null">
+        restriction_type = #{restrictionType,jdbcType=VARCHAR},
+      </if>
+      <if test="applauseNumber != null">
+        applause_number = #{applauseNumber,jdbcType=INTEGER},
+      </if>
+      <if test="commentNumber != null">
+        comment_number = #{commentNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+    </set>
+    where idea_id = #{ideaId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Idea">
+    <!--@mbg.generated-->
+    update idea
+    set user_id = #{userId,jdbcType=INTEGER},
+      idea_content = #{ideaContent,jdbcType=VARCHAR},
+      is_restriction = #{isRestriction,jdbcType=BIT},
+      restriction_type = #{restrictionType,jdbcType=VARCHAR},
+      applause_number = #{applauseNumber,jdbcType=INTEGER},
+      comment_number = #{commentNumber,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where idea_id = #{ideaId,jdbcType=INTEGER}
+  </update>
+</mapper>

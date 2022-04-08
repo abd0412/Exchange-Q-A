@@ -1,0 +1,69 @@
+2021-11-17 15:32:35.560 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - The following profiles are active: dev
+2021-11-17 15:32:36.133 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=40da1d6c-8080-327b-9b58-374650b0d325
+2021-11-17 15:32:36.172 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d4a44b7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:32:36.182 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f0be4e77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:32:36.357 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8246 (http)
+2021-11-17 15:32:36.370 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:32:36.378 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-11-17 15:32:36.378 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2021-11-17 15:32:36.489 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-11-17 15:32:36.489 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 922 ms
+2021-11-17 15:32:37.065 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:32:37.069 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:32:37.189 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-17 15:32:38.575 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-11-17 15:32:38.662 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-11-17 15:32:38.721 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:32:38.737 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8246 (http) with context path ''
+2021-11-17 15:32:38.738 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - Started FunctionDevelopmentApplication in 6.043 seconds (JVM running for 6.577)
+2021-11-17 15:32:39.127 [RMI TCP Connection(3)-192.168.10.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-17 15:32:39.127 [RMI TCP Connection(3)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-11-17 15:32:39.136 [RMI TCP Connection(3)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2021-11-17 15:32:39.148 [RMI TCP Connection(1)-192.168.10.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-11-17 15:41:41.031 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - The following profiles are active: dev
+2021-11-17 15:41:41.615 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=40da1d6c-8080-327b-9b58-374650b0d325
+2021-11-17 15:41:41.653 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2f3563a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:41:41.662 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4b4f66a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:41:41.812 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8246 (http)
+2021-11-17 15:41:41.823 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:41:41.831 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-11-17 15:41:41.831 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2021-11-17 15:41:41.943 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-11-17 15:41:41.944 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 906 ms
+2021-11-17 15:41:42.541 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:41:42.544 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:41:42.667 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-17 15:41:44.016 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-11-17 15:41:44.109 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-11-17 15:41:44.186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:41:44.201 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8246 (http) with context path ''
+2021-11-17 15:41:44.202 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - Started FunctionDevelopmentApplication in 6.016 seconds (JVM running for 6.574)
+2021-11-17 15:41:44.872 [RMI TCP Connection(5)-192.168.10.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-17 15:41:44.872 [RMI TCP Connection(5)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-11-17 15:41:44.882 [RMI TCP Connection(5)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-11-17 15:41:44.894 [RMI TCP Connection(4)-192.168.10.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-11-17 15:41:54.287 [http-nio-8246-exec-1] INFO  cn.edu.guet.exchange.controller.RelationController - selectRelation_userId==>1
+2021-11-17 15:41:54.288 [http-nio-8246-exec-1] INFO  cn.edu.guet.exchange.controller.RelationController - selectRelation_moduleCode==>null
+2021-11-17 15:41:54.288 [http-nio-8246-exec-1] INFO  cn.edu.guet.exchange.controller.RelationController - selectRelation_moduleId==>null
+2021-11-17 15:51:34.031 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - The following profiles are active: dev
+2021-11-17 15:51:34.614 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=40da1d6c-8080-327b-9b58-374650b0d325
+2021-11-17 15:51:34.655 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$517d6947] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:51:34.664 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6d976c44] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-17 15:51:34.817 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8246 (http)
+2021-11-17 15:51:34.833 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:51:34.843 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-11-17 15:51:34.843 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2021-11-17 15:51:34.956 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-11-17 15:51:34.957 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 918 ms
+2021-11-17 15:51:35.637 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:51:35.639 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-11-17 15:51:35.780 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-17 15:51:37.203 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-11-17 15:51:37.326 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-11-17 15:51:37.398 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8246"]
+2021-11-17 15:51:37.413 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8246 (http) with context path ''
+2021-11-17 15:51:37.414 [main] INFO  c.edu.guet.exchange.FunctionDevelopmentApplication - Started FunctionDevelopmentApplication in 6.203 seconds (JVM running for 6.773)
+2021-11-17 15:51:37.774 [RMI TCP Connection(3)-192.168.10.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-17 15:51:37.775 [RMI TCP Connection(3)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-11-17 15:51:37.782 [RMI TCP Connection(3)-192.168.10.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-11-17 15:51:37.947 [RMI TCP Connection(5)-192.168.10.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

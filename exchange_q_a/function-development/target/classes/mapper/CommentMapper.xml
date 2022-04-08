@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.exchange.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.guet.exchange.entities.Comment">
+    <!--@mbg.generated-->
+    <!--@Table `comment`-->
+    <id column="comment_id" jdbcType="INTEGER" property="commentId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="comment_content" jdbcType="VARCHAR" property="commentContent" />
+    <result column="module_code" jdbcType="INTEGER" property="moduleCode" />
+    <result column="module_id" jdbcType="INTEGER" property="moduleId" />
+    <result column="approval_number" jdbcType="INTEGER" property="approvalNumber" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="root_module_code" jdbcType="INTEGER" property="rootModuleCode" />
+    <result column="root_module_id" jdbcType="INTEGER" property="rootModuleId" />
+    <result column="root_comment_id" jdbcType="INTEGER" property="rootCommentId" />
+    <result column="response_number" jdbcType="INTEGER" property="responseNumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    comment_id, user_id, comment_content, module_code, module_id, approval_number, mark, 
+    create_time, update_time, is_delete, root_module_code, root_module_id, root_comment_id, response_number
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `comment`
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from `comment`
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="comment_id" keyProperty="commentId" parameterType="cn.edu.guet.exchange.entities.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment` (user_id, comment_content, module_code, 
+      module_id, approval_number, mark, 
+      create_time, update_time, is_delete
+      )
+    values (#{userId,jdbcType=INTEGER}, #{commentContent,jdbcType=VARCHAR}, #{moduleCode,jdbcType=INTEGER}, 
+      #{moduleId,jdbcType=INTEGER}, #{approvalNumber,jdbcType=INTEGER}, #{mark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="comment_id" keyProperty="commentId" parameterType="cn.edu.guet.exchange.entities.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="commentContent != null">
+        comment_content,
+      </if>
+      <if test="moduleCode != null">
+        module_code,
+      </if>
+      <if test="moduleId != null">
+        module_id,
+      </if>
+      <if test="approvalNumber != null">
+        approval_number,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="rootModuleCode != null">
+        root_module_code,
+      </if>
+      <if test="rootModuleId != null">
+        root_module_id,
+      </if>
+      <if test="rootCommentId != null">
+        root_comment_id,
+      </if>
+      <if test="responseNumber != null">
+        response_number
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="commentContent != null">
+        #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleCode != null">
+        #{moduleCode,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        #{moduleId,jdbcType=INTEGER},
+      </if>
+      <if test="approvalNumber != null">
+        #{approvalNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="rootModuleCode != null">
+        #{rootModuleCode,jdbcType=INTEGER},
+      </if>
+      <if test="rootModuleId != null">
+        #{rootModuleId,jdbcType=INTEGER},
+      </if>
+      <if test="rootCommentId != null">
+        #{rootCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="responseNumber != null">
+        #{responseNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.guet.exchange.entities.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="commentContent != null">
+        comment_content = #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleCode != null">
+        module_code = #{moduleCode,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        module_id = #{moduleId,jdbcType=INTEGER},
+      </if>
+      <if test="approvalNumber != null">
+        approval_number = #{approvalNumber,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="rootCommentId != null">
+        root_comment_id = #{rootCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="responseNumber != null">
+        response_number = #{responseNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.guet.exchange.entities.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    set user_id = #{userId,jdbcType=INTEGER},
+      comment_content = #{commentContent,jdbcType=VARCHAR},
+      module_code = #{moduleCode,jdbcType=INTEGER},
+      module_id = #{moduleId,jdbcType=INTEGER},
+      approval_number = #{approvalNumber,jdbcType=INTEGER},
+      mark = #{mark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BIT}
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+  <delete id="dummyDeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update `comment`
+    set is_delete = 1
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </delete>
+  <select id="selectCommentByModuleCodeModuleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from `comment`
+    where module_code = #{moduleCode,jdbcType=INTEGER}
+    and module_id = #{moduleId,jdbcType=INTEGER}
+    and is_delete = false
+    limit #{lineNumber}, #{pageLength}
+  </select>
+  <select id="selectAllCommentByModuleCodeModuleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from `comment`
+    where module_code = #{moduleCode,jdbcType=INTEGER}
+    and module_id = #{moduleId,jdbcType=INTEGER}
+    and is_delete = false
+    limit 2
+  </select>
+  <select id="selectCommentNumberByModuleCodeModuleId" resultType="integer">
+    select
+    COUNT(comment_id)
+    from `comment`
+    where module_code = #{moduleCode,jdbcType=INTEGER}
+    and module_id = #{moduleId,jdbcType=INTEGER}
+    and is_delete = false
+  </select>
+  <select id="selectResponseByModuleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from `comment`
+    where root_comment_id = #{moduleId,jdbcType=INTEGER}
+    and is_delete = false
+    limit #{lineNumber}, #{pageLength}
+  </select>
+  <select id="selectBeCommentedUserId" resultType="java.lang.Integer">
+    select
+    user_id
+    from comment
+    where comment_id = #{beCommentedId}
+    and is_delete = false
+  </select>
+  <select id="selectChildComment" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from comment
+    where module_code = #{moduleCode}
+    and module_id = #{commentId}
+    and is_delete = false
+  </select>
+</mapper>
